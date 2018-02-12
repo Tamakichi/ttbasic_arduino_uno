@@ -108,7 +108,7 @@ const PROGMEM unsigned char i_nsb[] = {
 char sstyle(unsigned char code,
   const unsigned char *table, unsigned char count) {
   while(count--) //中間コードの数だけ繰り返す
-    if (code == pgm_read_byte_near(table[count])) //もし該当の中間コードがあったら
+    if (code == pgm_read_byte_near(&table[count])) //もし該当の中間コードがあったら
       return 1; //1を持ち帰る
   return 0; //（なければ）0を持ち帰る
 }
